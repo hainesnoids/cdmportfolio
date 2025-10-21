@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CDM Portfolio</title>
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/libgallery.css">
+    <script src="js/index.js"></script>
+    <script src="js/libgallery.js"></script>
+</head>
+<body>
+    <noscript>
+        You need to enable JavaScript to view this page.
+    </noscript>
+    <header>
+        <banner>
+            <!-- Banner Goes Here -->
+            <span>CDM Portfolio</span>
+        </banner>
+        <nav>
+            <a data-page-id="home">Home</a>
+            <a data-page-id="photos">Photo Assignments</a>
+            <a data-page-id="videos">Video Assignments</a>
+            <a data-page-id="about">About Me</a>
+        </nav>
+    </header>
+    <main>
+        <pagecontainer>
+            <pagebounds>
+                <page id="home">
+                    <div class="main">
+                        <h1>Creative Digital Media Portfolio</h1>
+                    </div>
+                </page>
+                <page id="photos">
+                    <div class="main">
+                        <h1>Photo Assignments</h1>
+                        <gallery data-libgallery-default-state="open">
+                            <year>
+                                <legend>2025-26</legend>
+                                <content>
+                                    <month>
+                                        <legend>Pumpkin Head</legend>
+                                        <content>
+                                            <img src="work/pumpkin-head.jpg" alt="this battle boutta be fire">
+                                        </content>
+                                    </month>
+                                </content>
+                            </year>
+                        </gallery>
+                    </div>
+                </page>
+                <page id="videos">
+                    <div class="main">
+                        <h1>Videos Page</h1>
+                    </div>
+                </page>
+                <page id="about">
+                    <div class="main">
+                        <h1>About Me Page</h1>
+                        <p>this is a really long page just so i can scroll really far</p>
+                        <img style="height: 200vh" src="img/banner.jpg">
+                    </div>
+                </page>
+            </pagebounds>
+        </pagecontainer>
+    </main>
+</body>
+</html>
