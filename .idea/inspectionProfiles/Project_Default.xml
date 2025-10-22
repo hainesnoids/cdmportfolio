@@ -4,7 +4,7 @@
     <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="15">
+          <list size="17">
             <item index="0" class="java.lang.String" itemvalue="nobr" />
             <item index="1" class="java.lang.String" itemvalue="noembed" />
             <item index="2" class="java.lang.String" itemvalue="comment" />
@@ -20,6 +20,8 @@
             <item index="12" class="java.lang.String" itemvalue="banner" />
             <item index="13" class="java.lang.String" itemvalue="pagescroll" />
             <item index="14" class="java.lang.String" itemvalue="pagecontainer" />
+            <item index="15" class="java.lang.String" itemvalue="grid" />
+            <item index="16" class="java.lang.String" itemvalue="item" />
           </list>
         </value>
       </option>
