@@ -99,3 +99,32 @@ page {
     max-width: 100%;
     margin: 0 auto;
 }
+
+/* Grid Boxes */
+
+grid {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/6;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 12px 12px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "home-01 home-01 home-02 home-02"
+        "home-01 home-01 home-03 home-04"
+        ". . . ."
+        ". . . ."
+        ". . . ."
+        ". . . .";
+}
+
+grid item {
+    display: block;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('https://picsum.photos/1280/720');
+}

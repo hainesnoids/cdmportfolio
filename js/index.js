@@ -19,7 +19,7 @@ function pageInit() {
 
 document.addEventListener('DOMContentLoaded', pageInit)
 
-// HEADER PARALLAX
+// header parallax
 window.addEventListener("scroll", () => {
     const background = document.querySelector("header");
     window.requestAnimationFrame(() => {
