@@ -1,6 +1,6 @@
 * {
-    --gallery-color: #000;
-    --gallery-accent: #000;
+    --gallery-color: #fff;
+    --gallery-accent: var(--accent);
 }
 
 gallery {

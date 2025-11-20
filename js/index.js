@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', pageInit)
 
 // header parallax
 window.addEventListener("scroll", () => {
-    const background = document.querySelector("header");
+    //const background = document.querySelector("header");
+    const background = document.querySelector(".parallax-background");
     window.requestAnimationFrame(() => {
         const scrollX = window.scrollX;
         const scrollY = window.scrollY;

@@ -1,13 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend+Exa:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 * {
     box-sizing: border-box;
-    --accent: HSL(6, 70%, 70%);
+    --primary: #aeacfe;
+    --accent: #8febac;
 }
 body {
     margin: 0;
     font-family: 'Inter', 'Roboto', 'Noto Sans', sans-serif;
-    background-color: #fff;
-    color: #000;
+    background-color: #151244;
+    color: #fff;
+}
+a:not(nav a) {
+    text-decoration: none;
+    color: var(--primary);
+}
+a:active {
+    color: var(--accent);
+}
+a:visited {
+    color: var(--primary);
+}
+.parallax-background {
+    background-image: url('../img/banner.png');
+    background-position: center;
+    background-repeat: repeat;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
 }
 header {
     display: flex;
@@ -16,15 +39,15 @@ header {
     align-items: center;
     color: #fff;
 
-    background-image: url('../img/banner.jpg');
-    background-size: cover;
+    /*background-image: url('../img/banner.png');
     background-position: center;
-    background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;*/
 }
 banner {
     width: 960px;
     max-width: 100%;
-    height: 180px;
+    height: 240px;
     display: flex;
     justify-content: start;
     align-items: end;
@@ -40,9 +63,20 @@ banner span {
     font-weight: bold;
     font-family: 'Lexend Exa', 'Noto Sans', sans-serif;
 }
+banner img {
+    height: 128px;
+    z-index: 1;
+}
+.navbar {
+    width: 960px;
+    max-width: 100%;
+}
 nav {
-    width: 100%;
+    width: min-content;
+    max-width: 100%;
     height: 48px;
+    padding: 0 18px;
+    margin: 12px;
 
     position: sticky;
     top: 0;
@@ -51,16 +85,19 @@ nav {
 
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
 
     /*background-color: #333;*/
     backdrop-filter: blur(13px);
     background-color: rgba(0, 0, 0, 0.4);
     color: #fff;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 48px;
 }
 nav a {
     text-decoration: none;
+    text-wrap: nowrap;
     height: 100%;
 
     display: flex;
@@ -71,8 +108,23 @@ nav a {
     transition: 0.2s color ease;
 }
 nav a:hover {
-    color: var(--accent);
+    color: var(--primary);
     cursor: pointer;
+}
+
+main {
+    background-color: rgba(58,58,90,0.8);
+    border-radius: 24px 24px 0 0;
+    margin: 0 12px;
+    border: 1px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(5px);
+    padding: 0 24px;
+}
+@media screen and (max-width: 959px) {
+    main {
+        margin: 0;
+        padding: 0 24px;
+    }
 }
 
 pagecontainer {
