@@ -44,7 +44,7 @@ header {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;*/
-    
+
     padding: 2px 18px;
 }
 banner {
@@ -176,7 +176,7 @@ pagebounds {
 }
 page {
     display: block;
-    width: 100%;
+    width: 25%;
     height: 100%;
     padding: 0 24px;
 }
@@ -215,4 +215,37 @@ grid item {
     background-repeat: no-repeat;
     /*background-image: url('https://picsum.photos/1280/720');*/
     background-image: url('../img/bear.jpg');
+}
+iframe.video-js {
+    aspect-ratio: 16 / 9;
+    border: none;
+    width: 100%;
+    max-width: 480px;
+}
+.socials {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+.socials li img {
+    width: 24px;
+}
+.socials li a {
+    text-decoration: none;
+    color: #fff;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 36px;
+    background-color: rgba(0,0,0,0.4);
+}
+.socials li a:active {
+    color: var(--accent);
+}
+.socials li span {
+    display: none;
 }
