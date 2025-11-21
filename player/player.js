@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const source = document.createElement('source');
     source.src = videoLink;
     // source.type = 'application/vnd.apple.mpegurl'; Does not work on Webkit (wtf?)
-    source.type = 'application/x-mpegURL';
+    //source.type = 'application/x-mpegURL';
 
     video.appendChild(source);
     wrapper.appendChild(video);
