@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <script src="player.js"></script>
+    <script src="video.min.js"></script>
+    <link href="video.css" rel="stylesheet">
+    <style>
+        * {
+            color: white;
+            --global-accent: #aeacfe;
+            border: none;
+        }
+        body {
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            text-decoration: none;
+        }
+        #video-wrapper {
+            width: 100%;
+            height: 100%;
+        }
+        #my-video {
+            height: 100%;
+            width: 100%;
+        }
+        .video-js {
+            border-radius: 0 !important;
+        }
+    </style>
+</head>
+<body>
+<div id="video-wrapper">
+</div>
+</body>
+</html>

@@ -1,29 +1,60 @@
 function pageInit() {
     const pageBounds = document.querySelector("pagebounds");
     const pages = document.querySelectorAll('pagebounds > page');
+    
     for (let idx = 0; idx < pages.length; idx++) {
         let page = pages[idx];
-        const pageId = page.getAttribute('id');
+        const pageId = page.getAttribute('data-id');
+        page.setAttribute('data-index', `${idx}`);
         const pageLink = document.querySelector(`*[data-page-id="${pageId}"]`);
         if (pageLink) {
             pageLink.addEventListener('click', () => {
-                document.querySelectorAll('pagebounds > page').forEach((b) => {b.classList.remove('active')});
-                page.classList.add('active');
-                document.querySelectorAll('*[data-page-id]').forEach((b) => {b.classList.remove('active')});
-                pageLink.classList.add('active');
-                pageBounds.style.left = `-${idx}00%`;
+                //switchToPage(page, pageLink, idx, true);
+                window.location.hash = pageId;
                 window.scrollTo({behavior: 'smooth', top: 0});
             })
         } else {
             console.warn(`Page ${pageId} does not have a corresponding link to it.`);
         }
     }
+
+    function switchToPage(page, pageLink, idx, natural = false) {
+        document.querySelectorAll('pagebounds > page').forEach((b) => {b.classList.remove('active')});
+        page.classList.add('active');
+        document.querySelectorAll('*[data-page-id]').forEach((b) => {b.classList.remove('active')});
+        pageLink.classList.add('active');
+        const pageBoundRect = page.getBoundingClientRect();
+        pageBounds.style.height = `${pageBoundRect.height}px`;
+        if (!natural) {
+            pageBounds.style.transition = 'left 0s linear';
+        }
+        pageBounds.style.left = `-${idx}00%`;
+        if (!natural) {
+            pageBounds.style.transition = '';
+        }
+    }
+
+    function hashCheck(natural = true) {
+        let hash = window.location.hash.replace('#', '');
+        // see if its a page
+        const page = document.querySelector(`pagebounds > page[data-id="${hash}"]`);
+        if (page) {
+            switchToPage(page, document.querySelector(`*[data-page-id="${hash}"]`), page.getAttribute('data-index'), natural);
+        } else {
+            console.warn('The user provided a page hash, but a connecting page was not found.');
+        }
+    }
+
+    // page hash detection
+    if (window.location.hash) {
+        hashCheck(false);
+    }
+    window.addEventListener('hashchange',hashCheck);
 }
 
 document.addEventListener('DOMContentLoaded', pageInit)
 
 // header parallax
-// ALSO ADD PARALLAX TO THE LOGO (IT LOOKS SICK ASF)
 
 window.addEventListener("scroll", () => {
     //const background = document.querySelector("header");

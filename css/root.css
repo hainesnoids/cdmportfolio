@@ -32,6 +32,7 @@ a:visited {
     width: 100%;
     height: 100%;
     z-index: 0;
+    min-height: 100vh;
 }
 header {
     display: flex;
@@ -44,8 +45,8 @@ header {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;*/
-    
-    padding: 2px 18px;
+
+    padding: 0 18px;
 }
 banner {
     width: 960px;
@@ -79,7 +80,7 @@ banner img {
     width: 960px;
     max-width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     position: sticky;
     top: 0;
@@ -87,14 +88,16 @@ banner img {
     /*margin: -96px auto 96px;*/
     margin: auto;
     z-index: 3;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    padding: 0 12px;
 }
 nav {
     width: min-content;
-    max-width: 100%;
     height: 48px;
     /*padding: 0 18px;*/
     padding: 3px;
-    margin: 12px 0;
+    margin: 12px auto;
 
     z-index: 10;
 
@@ -172,12 +175,12 @@ pagebounds {
     width: 400%;
     position: relative;
     left: 0;
-    transition: left .5s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: left .5s cubic-bezier(0.22, 1, 0.36, 1), height .5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 page {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 25%;
+    height: min-content;
     padding: 0 24px;
 }
 .main {
@@ -185,6 +188,7 @@ page {
     width: 960px;
     max-width: 100%;
     margin: 0 auto;
+    height: auto;
 }
 
 /* Grid Boxes */
@@ -215,4 +219,59 @@ grid item {
     background-repeat: no-repeat;
     /*background-image: url('https://picsum.photos/1280/720');*/
     background-image: url('../img/bear.jpg');
+}
+iframe.video-js {
+    aspect-ratio: 16 / 9;
+    border: none;
+    width: 100%;
+    max-width: 480px;
+}
+.socials {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+.socials li img {
+    width: 24px;
+}
+.socials li a {
+    text-decoration: none;
+    color: #fff;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 36px;
+    background-color: rgba(255,255,255,0.2);
+}
+.socials li a:active {
+    color: var(--accent);
+}
+.socials li span {
+    display: none;
+}
+.float-left {
+    float: left;
+    margin-right: 12px;
+}
+.float-right {
+    float: right;
+    margin-left: 12px;
+}
+@media screen and (max-width: 639px) {
+    /* disable float on phone screens */
+    .float-left {
+        float: none;
+        margin-right: 0;
+    }
+    .float-left:-moz-first-node, .float-right:-moz-first-node {
+        margin-top: 24px;
+    }
+    .float-right {
+        float: none;
+        margin-left: 0;
+    }
 }
