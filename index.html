@@ -10,9 +10,13 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/root.css">
     <link rel="stylesheet" href="css/libgallery.css">
+    <link rel="stylesheet" href="css/project-popup.css">
     <!-- Scripts -->
     <script src="js/index.js"></script>
     <script src="js/libgallery.js"></script>
+    <script src="js/projects.js"></script>
+    <!-- External Resources -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=close" />
 </head>
 <body>
     <div class="parallax-background"></div>
@@ -75,7 +79,6 @@
                         <h1>Videos Page</h1>
                         <h2>2025-26</h2>
                         <h3>The Speed Run</h3>
-                        <iframe class="video-js" src="player?v=https://files.catbox.moe/2zxh4v.mov"></iframe>
                     </div>
                 </page>
                 <page data-id="about">
@@ -136,5 +139,23 @@
             </pagebounds>
         </pagecontainer>
     </main>
+    <template id="project-popup">
+        <dialog class="project" state="closed">
+            <div class="flex-row project-contents">
+                <div class="project-embed">
+
+                </div>
+                <div class="project-info">
+                    <h3 class="project-assignment">Assignment</h3>
+                    <h1 class="project-title">Title</h1>
+                    <span class="project-date">Date</span>
+                    <p class="project-comment">Comment</p>
+                    <div class="project-dialog-buttons">
+                        <button class="close"><span class="material-symbols-rounded">close</span></button>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+    </template>
 </body>
 </html>
