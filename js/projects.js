@@ -30,3 +30,17 @@ async function openProject(id) {
         },500);
     })
 }
+
+async function loadProjects() {
+    for (let idx = 0; idx < projectDict.length; idx++) {
+        let itm = projectDict[idx];
+        const projectLink = document.createElement('a');
+        const projectData = await fetch(`projects/${itm}.json`).then(res => res.json());
+        projectLink.addEventListener('click', async () => {await openProject(itm)});
+        projectLink.href = '#';
+        projectLink.innerText = projectData['title'];
+        document.querySelector('.video-project-gallery').appendChild(projectLink);
+        document.querySelector('.video-project-gallery').appendChild(document.createElement('br'));
+    }
+}
+loadProjects();
