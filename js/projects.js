@@ -1,6 +1,7 @@
 let projectDict = [
     'y2026-speed-run',
-    'y2026-green-screen'
+    'y2026-green-screen',
+    'y2026-fyde-commercial'
 ]
 
 async function openProject(id) {
@@ -17,18 +18,30 @@ async function openProject(id) {
         case 'video': {
             clone.querySelector('.project-embed').innerHTML = `<iframe class="video-js" src="player?v=${projectData['content']['url']}"></iframe>`;
         }
+        case 'embed': {
+            clone.querySelector('.project-embed').innerHTML = `<iframe class="video-js" allowfullscreen allowdrm src="${projectData['content']['url']}"></iframe>`;
+        }
     }
 
     document.body.appendChild(clone);
     clone.showModal();
     clone.setAttribute('state', 'open');
-    clone.querySelector('.project-dialog-buttons .close').addEventListener('click', () => {
+    function closeDialog() {
         clone.setAttribute('state', 'closed');
         setTimeout(() => {
             clone.close();
             clone.remove();
         },500);
-    })
+    }
+    clone.addEventListener('click', function(event) {
+        let rect = clone.getBoundingClientRect();
+        let isInDialog = (rect.top <= event.clientY && event.clientY <= rect.top + rect.height &&
+        rect.left <= event.clientX && event.clientX <= rect.left + rect.width);
+        if (!isInDialog) {
+            closeDialog();
+        }
+    });
+    clone.querySelector('.project-dialog-buttons .close').addEventListener('click', closeDialog);
 }
 
 async function loadProjects() {
