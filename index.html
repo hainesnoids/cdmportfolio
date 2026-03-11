@@ -149,18 +149,22 @@
     </main>
     <template id="project-popup">
         <dialog class="project" state="closed">
-            <div class="flex-row project-contents">
+            <div class="flex-column project-contents">
+                <div class="project-dialog-buttons">
+                    <button class="close"><span class="material-symbols-rounded">close</span></button>
+                </div>
                 <div class="project-embed">
 
                 </div>
                 <div class="project-info">
-                    <h3 class="project-assignment">Assignment</h3>
-                    <h1 class="project-title">Title</h1>
-                    <span class="project-date">Date</span>
-                    <p class="project-comment">Comment</p>
-                    <div class="project-dialog-buttons">
-                        <button class="close"><span class="material-symbols-rounded">close</span></button>
+                    <div class="flex-row project-metadata">
+                        <span class="project-assignment">Assignment</span>
+                        <span class="dot">•</span>
+                        <span class="project-date">Date</span>
                     </div>
+                    <h1 class="project-title">Title</h1>
+                    <hr>
+                    <p class="project-comment">Comment</p>
                 </div>
             </div>
         </dialog>

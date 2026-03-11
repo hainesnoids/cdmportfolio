@@ -1,7 +1,8 @@
 let projectDict = [
     'y2026-speed-run',
     'y2026-green-screen',
-    'y2026-fyde-commercial'
+    'y2026-fyde-commercial',
+    'y2026-movie-trailer'
 ]
 
 async function openProject(id) {
@@ -17,9 +18,11 @@ async function openProject(id) {
     switch (projectData['content']['type']) {
         case 'video': {
             clone.querySelector('.project-embed').innerHTML = `<iframe class="video-js" src="player?v=${projectData['content']['url']}"></iframe>`;
+            break;
         }
         case 'embed': {
             clone.querySelector('.project-embed').innerHTML = `<iframe class="video-js" allowfullscreen allowdrm src="${projectData['content']['url']}"></iframe>`;
+            break;
         }
     }
 
