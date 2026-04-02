@@ -52,10 +52,16 @@ function pageInit() {
     window.addEventListener('hashchange',hashCheck);
 }
 
+// update page height on-demand
+function demandPageHeightChange(page = document.querySelector('pagebounds > page.active')) {
+    const pageBounds = document.querySelector("pagebounds");
+    const pageBoundRect = page.getBoundingClientRect();
+    pageBounds.style.height = `${pageBoundRect.height}px`;
+}
+
 document.addEventListener('DOMContentLoaded', pageInit)
 
 // header parallax
-
 window.addEventListener("scroll", () => {
     //const background = document.querySelector("header");
     const background = document.querySelector(".parallax-background");
