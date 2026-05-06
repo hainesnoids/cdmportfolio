@@ -2,7 +2,8 @@ let projectDict = [
     'y2026-speed-run',
     'y2026-green-screen',
     'y2026-fyde-commercial',
-    'y2026-movie-trailer'
+    'y2026-movie-trailer',
+    'y2026-visual-narrative'
 ]
 
 async function openProject(id) {
